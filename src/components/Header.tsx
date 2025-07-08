@@ -10,8 +10,8 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Why Us?', href: '#services' },
+    { name: 'Gallery', href: '#portfolio' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -78,10 +78,10 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             {/* Removed the logo box */}
-            {/* <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">D</span>
-            </div> */}
-            <span className="text-xl font-bold text-gray-900">Devstudio</span>
+            <div className="w-20 h-20 bg-gradient-to-r rounded-lg flex items-center justify-center">
+              <span><img src="/logo2.png" alt="" /></span>
+            </div>
+            <span className="text-xl font-bold text-gray-900"></span>
           </div>
 
           {/* Desktop Navigation */}

@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Palette, Sparkles, Star, Heart, Rocket } from 'lucide-react';
+import { ArrowRight, Code, Palette, Sparkles, Star, Heart, Rocket, Radius } from 'lucide-react';
 import Spline from '@splinetool/react-spline';
 
 const floatingIcons = [
@@ -48,19 +48,23 @@ const Hero = () => {
 					<div className="space-y-8">
 						<div className="space-y-4">
 							<h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight drop-shadow-lg">
-								Crafting Digital
+								Kool Kids
 								<span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 animate-gradient-x">
-									Experiences
+									Kindergarten
 								</span>
 							</h1>
 							<p className="text-xl text-gray-600 leading-relaxed">
-								Professional{' '}
-								<span className="font-semibold text-blue-600">web development</span> and{' '}
-								<span className="font-semibold text-purple-600">UI/UX design</span> services that transform your ideas
-								into stunning, user-friendly digital solutions.
-							</p>
+								Where{' '}
+								<span className="font-semibold text-blue-600">tiny steps</span> lead to{' '}
+								<span className="font-semibold text-purple-600">big dreams!</span>
+								<div className="flex justify-center items-center px-4">
+  <span className="text-lg sm:text-xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-fuchsia-500 to-indigo-500 font-medium leading-relaxed block max-w-2xl">
+    Every day is a new adventure filled with fun, friendships, and first discoveries. 💫<br />
+    From painting tiny masterpieces to storytime snuggles and giggly games — we're here to make growing up magical. 🌈🎨📚
+  </span>
+</div>
+</p>
 						</div>
-
 						<div className="flex flex-col sm:flex-row gap-4">
 							<Button
 								size="lg"
@@ -68,7 +72,7 @@ const Hero = () => {
 								className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all"
 							>
 								<a href="#portfolio" className="flex items-center">
-									View Our Work
+									Gallery
 									<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
 								</a>
 							</Button>
@@ -81,42 +85,15 @@ const Hero = () => {
 								<a href="#contact">Get In Touch</a>
 							</Button>
 						</div>
-
-						<div className="flex items-center space-x-8 pt-8">
-							<div className="flex items-center space-x-2">
-								<Code className="h-8 w-8 text-blue-600 animate-bounce" />
-								<span className="text-sm font-medium text-gray-700">Web Development</span>
-							</div>
-							<div className="flex items-center space-x-2">
-								<Palette className="h-8 w-8 text-purple-600 animate-bounce" style={{ animationDelay: '0.5s' }} />
-								<span className="text-sm font-medium text-gray-700">UI/UX Design</span>
-							</div>
-						</div>
 					</div>
 
 					{/* Right side: Spline 3D scene in a black box with gradients */}
-					<div className="relative w-full h-96 flex items-center justify-center">
-						<div
-							className="absolute inset-0 rounded-2xl z-0 flex items-center justify-center"
-							style={{
-								background: 'linear-gradient(135deg, #18181b 60%, #312e81 100%)',
-								boxShadow: '0 8px 32px 0 rgba(30,41,59,0.18), 0 2px 16px 0 rgba(99,102,241,0.10)',
-							}}
-						/>
-						<div className="absolute inset-0 flex items-center justify-center z-10">
-							<div className="w-full h-full flex items-center justify-center">
-								<Spline scene="https://prod.spline.design/bp4wv5BXL-dC5DVm/scene.splinecode" />
-							</div>
+					<div className="rounded-[40px] bg-gray-300 p-5">
+						<img src="image.png" alt=""/>
 						</div>
-						{/* Extra floating elements */}
-						<div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full animate-pulse shadow-xl z-20"></div>
-						<div
-							className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full animate-pulse shadow-lg z-20"
-							style={{ animationDelay: '1s' }}
-						></div>
+						
+						</div>
 					</div>
-				</div>
-			</div>
 			{/* Gradient animation keyframes */}
 			<style>
 				{`

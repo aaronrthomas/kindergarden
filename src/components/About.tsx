@@ -1,51 +1,48 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {
-  SiReact,
-  SiTypescript,
-  SiNodedotjs,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiFigma,
-  SiAdobexd,
-  SiAdobephotoshop,
-  SiAdobeillustrator,
-  SiSketch,
-  SiMongodb,
-  SiPostgresql,
-  SiDocker,
-  SiGit
-} from 'react-icons/si';
+  Book, Palette, Music, Puzzle, Smile, Users, Leaf, Calculator, Handshake, Flower, Volume2, Paintbrush, Move3D, Circle
+} from 'lucide-react';
+
+const skills = [
+  'Creative Arts',
+  'Storytelling',
+  'Phonics',
+  'Color Recognition',
+  'Motor Skills',
+  'Problem Solving',
+  'Rhymes & Songs',
+  'Emotional Intelligence',
+  'Counting & Numbers',
+  'Shape Recognition',
+  'Group Activities',
+  'Nature Exploration',
+  'Alphabet Learning',
+  'Social Skills',
+  'Sensory Play'
+];
 
 const skillIcons: Record<string, JSX.Element> = {
-  'React': <SiReact className="text-blue-500 mr-2" />,
-  'TypeScript': <SiTypescript className="text-blue-700 mr-2" />,
-  'Node.js': <SiNodedotjs className="text-green-600 mr-2" />,
-  'Next.js': <SiNextdotjs className="text-gray-800 mr-2" />,
-  'Tailwind CSS': <SiTailwindcss className="text-cyan-500 mr-2" />,
-  'Figma': <SiFigma className="text-pink-500 mr-2" />,
-  'Adobe XD': <SiAdobexd className="text-pink-600 mr-2" />,
-  'Photoshop': <SiAdobephotoshop className="text-blue-400 mr-2" />,
-  'Illustrator': <SiAdobeillustrator className="text-yellow-500 mr-2" />,
-  'Sketch': <SiSketch className="text-yellow-400 mr-2" />,
-  'MongoDB': <SiMongodb className="text-green-700 mr-2" />,
-  'PostgreSQL': <SiPostgresql className="text-blue-800 mr-2" />,
-  'Docker': <SiDocker className="text-blue-500 mr-2" />,
-  'Git': <SiGit className="text-orange-600 mr-2" />,
+  'Creative Arts': <Paintbrush className="w-4 h-4 mr-1" />,
+  'Storytelling': <Book className="w-4 h-4 mr-1" />,
+  'Phonics': <Volume2 className="w-4 h-4 mr-1" />,
+  'Color Recognition': <Palette className="w-4 h-4 mr-1" />,
+  'Motor Skills': <Move3D className="w-4 h-4 mr-1" />,
+  'Problem Solving': <Puzzle className="w-4 h-4 mr-1" />,
+  'Rhymes & Songs': <Music className="w-4 h-4 mr-1" />,
+  'Emotional Intelligence': <Smile className="w-4 h-4 mr-1" />,
+  'Counting & Numbers': <Calculator className="w-4 h-4 mr-1" />,
+  'Shape Recognition': <Circle className="w-4 h-4 mr-1" />,
+  'Group Activities': <Users className="w-4 h-4 mr-1" />,
+  'Nature Exploration': <Leaf className="w-4 h-4 mr-1" />,
+  'Social Skills': <Handshake className="w-4 h-4 mr-1" />,
+  'Sensory Play': <Flower className="w-4 h-4 mr-1" />
 };
 
 const About = () => {
-  const skills = [
-    'React', 'TypeScript', 'Node.js', 'Next.js', 'Tailwind CSS',
-    'Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'Sketch',
-    'MongoDB', 'PostgreSQL', 'Docker', 'Git'
-  ];
-
   const stats = [
-    { number: '10+', label: 'Projects Completed' },
-    { number: '10+', label: 'Happy Clients' },
-    { number: '1+', label: 'Years Experience' },
-    { number: '100%', label: 'Client Satisfaction' }
+    { number: '9+', label: 'Years Experience' },
+    { number: '100%', label: 'Parent Satisfaction' }
   ];
 
   return (
@@ -53,7 +50,7 @@ const About = () => {
       id="about"
       className="py-20"
       style={{
-        background: 'linear-gradient(135deg, #f0f4ff 0%, #f8fafc 100%)', // Contact.tsx uses this gradient
+        background: 'linear-gradient(135deg, #f0f4ff 0%, #f8fafc 100%)',
       }}
     >
       <style>
@@ -75,30 +72,21 @@ const About = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-purple-600 to-pink-500 mb-6 drop-shadow-lg tracking-tight animate-gradient-x">
-                About DesignCraft
+                About Kool Kids
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
                 <p>
-                  We are a passionate team of <span className="font-semibold text-blue-600">web developers</span> and <span className="font-semibold text-purple-600">UI/UX designers</span> dedicated to creating 
-                  exceptional digital experiences. With years of experience in the industry, we've helped 
-                  businesses of all sizes achieve their digital goals.
+                  <span className="font-semibold text-blue-600">Where Little Minds Grow, and Big Dreams Begin!</span> <br />
+                  For over 9 years, Kool Kids Kindergarten has been a trusted name in early childhood education — creating a joyful, secure, and stimulating space where every child is encouraged to imagine, explore, and grow.
                 </p>
                 <p>
-                  Our approach combines <span className="font-semibold text-blue-500">cutting-edge technology</span> with <span className="font-semibold text-purple-500">user-centered design</span> principles 
-                  to deliver solutions that not only look great but also perform exceptionally well. 
-                  We believe in the power of <span className="font-semibold text-pink-500">collaboration</span> and work closely with our clients to bring 
-                  their visions to life.
-                </p>
-                <p>
-                  Whether you're a startup looking to establish your digital presence or an established 
-                  company seeking to modernize your systems, we have the expertise and creativity to 
-                  make it happen.
+                  At Kool Kids, we understand that the early years shape a child's future. That’s why we go beyond the basics to provide a well-rounded foundation that nurtures academic skills, emotional well-being, and social confidence — all in a fun, playful environment.
                 </p>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Our Skills & Technologies</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Our Skills & Activities</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
                   <Badge
@@ -131,11 +119,7 @@ const About = () => {
 
             <Card className="p-8 border-0 shadow-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white about-glow hover:scale-105 transition-transform duration-200">
               <CardContent className="p-0 text-center">
-                <h3 className="text-2xl font-bold mb-4 tracking-tight">Ready to Start Your Project?</h3>
-                <p className="mb-6 opacity-90 text-lg">
-                  Let's discuss how we can help bring your ideas to life with our expertise 
-                  in web development and UI/UX design.
-                </p>
+                <h3 className="text-2xl font-bold mb-4 tracking-tight">Ready to Join the Kool Kids Family?</h3>
                 <a
                   href="#contact"
                   className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-blue-50 transition-colors duration-200 tracking-wide"

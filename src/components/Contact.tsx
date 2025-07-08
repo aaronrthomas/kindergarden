@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -51,13 +51,12 @@ function getRandomBounceStyle(index: number) {
 }
 
 function getRandomFloatStyle(index: number) {
-  // Randomize position, size, opacity, animation duration/delay
-  const top = Math.random() * 80 + 5; // 5% - 85%
-  const left = Math.random() * 90; // 0% - 90%
-  const size = Math.random() * 32 + 32; // 32px - 64px
-  const opacity = Math.random() * 0.25 + 0.10; // 0.10 - 0.35
-  const duration = (Math.random() * 6 + 8).toFixed(1); // 8s - 14s
-  const delay = (Math.random() * 6).toFixed(1); // 0s - 6s
+  const top = Math.random() * 80 + 5;
+  const left = Math.random() * 90;
+  const size = Math.random() * 32 + 32;
+  const opacity = Math.random() * 0.25 + 0.10;
+  const duration = (Math.random() * 6 + 8).toFixed(1);
+  const delay = (Math.random() * 6).toFixed(1);
   const floatAnim = Math.random() > 0.5 ? 'floatY' : 'floatX';
   return {
     position: 'absolute' as const,
@@ -69,7 +68,7 @@ function getRandomFloatStyle(index: number) {
     zIndex: 0,
     pointerEvents: 'none' as const,
     animation: `${floatAnim} ${duration}s ease-in-out ${delay}s infinite`,
-    filter: 'blur(0.5px) drop-shadow(0 0 8px #a5b4fc)',
+    filter: 'blur(0.5px) drop-shadow(0 0 8px #a5b4fc)'
   };
 }
 
@@ -88,31 +87,19 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting contact form:', formData);
-
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: formData
       });
 
-      if (error) {
-        throw error;
-      }
-
-      console.log('Email sent successfully:', data);
+      if (error) throw error;
 
       toast({
         title: "Message sent successfully!",
         description: "We'll get back to you within 24 hours.",
       });
 
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error: any) {
-      console.error('Error sending email:', error);
       toast({
         title: "Error sending message",
         description: "Please try again later or contact us directly.",
@@ -132,27 +119,28 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: Mail,
-      title: 'Email',
-      details: 'aaronrthomas88@gmail.com',
-      link: 'mailto:aaronrthomas88@gmail.com'
-    },
-    {
       icon: Phone,
       title: 'Phone',
-      details: '+91 7034670789',
-      link: 'tel:+917034670789'
+      details: '+91 9746095000 / +91 9746606930',
+      link: 'tel:+919746095000'
     },
     {
       icon: MapPin,
       title: 'Location',
-      details: 'Thiruvananthapuram, Kerala, India',
+      details: (
+        <p>
+          PRRA 64, Pazhaya Road,<br />
+          Opp. Green Heights Apartment,<br />
+          Near Neerali Restaurant,<br />
+          Thiruvananthapuram, Kerala – 695011
+        </p>
+      ),
       link: '#'
     },
     {
       icon: Clock,
       title: 'Business Hours',
-      details: 'Mon-Fri: 10AM-!2AM PST',
+      details: 'Mon-Fri: 7 a.m - 8 p.m',
       link: '#'
     }
   ];
@@ -168,7 +156,7 @@ const Contact = () => {
       }}
     >
       <style>{bounceKeyframes}</style>
-      {/* Floating icons background */}
+
       <div
         aria-hidden="true"
         style={{
@@ -191,7 +179,7 @@ const Contact = () => {
           );
         })}
       </div>
-      {/* Main content */}
+
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className="text-center mb-16"
@@ -207,49 +195,67 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Talk About Your Project</h3>
-              <p className="text-gray-600 mb-8">
-                Whether you need a complete website overhaul, a new web application, or just want to improve your user experience, we're here to help. Our team is ready to discuss your ideas and provide expert guidance.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              {contactInfo.map((info, index) => (
-                <Card
-                  key={index}
-                  className="border-0 shadow-md hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 bg-white/90 backdrop-blur"
-                  style={{ transition: 'transform 0.2s cubic-bezier(.4,0,.2,1)' }}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div
-                        className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={getRandomBounceStyle(index)}
-                      >
-                        <info.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
-                        {info.link && info.link !== '#' ? (
-                          <a
-                            href={info.link}
-                            className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                          >
-                            {info.details}
-                          </a>
-                        ) : (
-                          <p className="text-gray-600">{info.details}</p>
-                        )}
-                      </div>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {contactInfo
+            .filter(info => info.title !== 'Business Hours')
+            .map((info, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-md hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 bg-white/90 backdrop-blur"
+                style={{ transition: 'transform 0.2s cubic-bezier(.4,0,.2,1)' }}
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div
+                      className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={getRandomBounceStyle(index)}
+                    >
+                      <info.icon className="h-6 w-6 text-white" />
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
+                      {info.link && info.link !== '#' ? (
+                        <a
+                          href={info.link}
+                          className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                        >
+                          {info.details}
+                        </a>
+                      ) : (
+                        <p className="text-gray-600">{info.details}</p>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+        </div>
+
+        {/* Business Hours card rendered separately with fit width */}
+        <div className="mt-6 w-fit">
+          {contactInfo
+            .filter(info => info.title === 'Business Hours')
+            .map((info, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-md hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 bg-white/90 backdrop-blur w-fit"
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div
+                      className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={getRandomBounceStyle(index)}
+                    >
+                      <info.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
+                      <p className="text-gray-600">{info.details}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
         </div>
       </div>
     </section>
