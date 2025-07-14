@@ -65,40 +65,78 @@ function getRandomFloatStyle(index: number) {
 
 const services = [
   {
-    icon: Paintbrush,
-    title: "Art & Craft",
-    description: "Hands-on creativity with colors, glue, and big imaginations!",
-    features: ["Painting", "Paper Crafts", "Clay Modeling"],
-  },
-  {
     icon: BookOpenCheck,
-    title: "Early Learning",
-    description: "Fun-filled basics of language, math, and storytelling.",
-    features: ["Alphabets", "Numbers", "Story Time"],
-  },
-  {
-    icon: Music,
-    title: "Music & Movement",
-    description: "Rhythm, songs, and joyful dance to keep little bodies active.",
-    features: ["Singing", "Dancing", "Instruments"],
-  },
-  {
-    icon: Users,
-    title: "Social Skills",
-    description: "Play-based activities to build confidence and kindness.",
-    features: ["Group Games", "Role Play", "Sharing Activities"],
+    title: "All-in-One Learning & Care Hub",
+    description:
+      "Tuition, daycare, after-school care, and nurturing teachers—all under one roof.",
+    features: [
+      "Tuition Support from LKG to VII",
+      "Daycare Services (6 months to 6 years)",
+      "After-School Care with academic guidance",
+      "Qualified & Caring Teachers",
+      "Open 7 AM – 8 PM",
+    ],
   },
   {
     icon: HeartHandshake,
-    title: "Safe Environment",
-    description: "A secure and loving space for happy learning every day.",
-    features: ["Hygiene Protocols", "Caretaker Supervision", "Friendly Staff"],
+    title: "Safe, Secure & Supervised",
+    description:
+      "24x7 CCTV, strict hygiene, and a homely, child-friendly environment.",
+    features: [
+      "24x7 CCTV Monitoring",
+      "Strict Hygiene Protocols",
+      "Homely atmosphere",
+      "Child-friendly classrooms & play areas",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Power-Packed Special Programs",
+    description:
+      "Karate, dance, physical training, brain development, and creative expression.",
+    features: [
+      "Karate & Kalari",
+      "Classical & Cinematic Dance",
+      "Physical Training",
+      "Brain development activities",
+      "Creative expression & confidence building",
+    ],
   },
   {
     icon: Smile,
-    title: "Joyful Days",
-    description: "Celebrations, laughter, and lots of little surprises!",
-    features: ["Theme Days", "Outdoor Play", "Festivals"],
+    title: "Flexible Daycare & Holiday Care",
+    description:
+      "One-day, holiday, and regular daycare with school pick-up/drop and daily themed fun.",
+    features: [
+      "One-day, holiday, and regular daycare",
+      "Direct school pick-up & drop-off",
+      "Daily themed activities & fun learning",
+      "Available on most school holidays",
+    ],
+  },
+  {
+    icon: Paintbrush,
+    title: "Fun-Filled Learning through Play",
+    description: "Art, craft, music, games, and celebrations for joyful learning.",
+    features: [
+      "Art & Craft, storytelling, paper folding",
+      "Music & Movement with rhythm activities",
+      "Indoor games & life skill building",
+      "Celebrations, theme days & birthday fun",
+    ],
+  },
+  {
+    icon: Music,
+    title: "Parent-Friendly Services",
+    description:
+      "Safe transport, daily updates, easy communication, and caring management.",
+    features: [
+      "Safe transport with trusted drivers",
+      "Daily updates through WhatsApp",
+      "Easy parent-staff communication",
+      "Regular feedback & progress tracking",
+      "A management team that truly cares",
+    ],
   },
 ];
 
@@ -169,9 +207,13 @@ const Services = () => {
               className="hover:shadow-2xl hover:scale-105 transition-all duration-300 border-0 shadow-md flex flex-col h-full w-full max-w-md bg-white/90 backdrop-blur"
             >
               <CardHeader className="text-center pb-4">
-                <div className="mx-auto w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-lg"  style={{
-    background: "linear-gradient(90deg, #18181b 0%, #6366f1 100%)",
-  }}>
+                <div
+                  className="mx-auto w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-lg"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #18181b 0%, #6366f1 100%)",
+                  }}
+                >
                   <item.icon className="h-8 w-8 text-white drop-shadow" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-900">
