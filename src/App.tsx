@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/next";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <><QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -22,7 +22,9 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
+  </QueryClientProvider><div>
+      <Analytics mode="production" />
+    </div></>
 );
 
 export default App;
